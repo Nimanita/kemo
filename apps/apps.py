@@ -9,7 +9,7 @@ from typing import Union
 # Message class defined in Pydantic
 class Courses(BaseModel):
     name: str
-    date: str
+    date: int
     description: str
     domain : list
     chapters : list
@@ -36,6 +36,7 @@ app = FastAPI()
 
 @app.post("/courses" ,status_code=status.HTTP_200_OK)
 def get_course(filterParameter : Parameters):
+ 
     courses = CoursesService.getCourses(filterParameter.sort , filterParameter.filters)
     
     response_msg_list = []

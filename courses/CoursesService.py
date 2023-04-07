@@ -64,10 +64,7 @@ class CoursesService:
         if course:
             courseChapters = course["chapters"]
             for chapter in courseChapters:
-                if chapter["name"] == filterParameter["chapterName"]:
-                    updateQuery["userCount"] = chapter["userCount"] + 1
-                    updateQuery["ratingValue"] = chapter["ratingValue"]
-                    
+                if chapter["name"] == filterParameter["chapterName"]:             
                     return chapter
         else:
             return {}

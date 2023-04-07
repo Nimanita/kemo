@@ -23,7 +23,7 @@ class UsersDB(MongoConnection):
             },
             {
                 "$group": {
-                    "_id" : {"chaptername": "$chaptername","coursename" : "$coursename"},
+                    "_id" : {"coursename" : "$coursename"},
                     "AverageRating": { "$avg": "$rating" }
                 }
             }
